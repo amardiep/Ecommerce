@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+{% block title  %}Profile{% endblock title  %}
+{% block body %}
+</br>
+</br>
+</br>
+</br>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+<h1>My Profile</h1>
+    </div>
+<table class="table table-info table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Products</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Payment Status</th>
+        <th scope="col">Address : </th>
+        <th scope="col">Delivery Status</th>
+        <th scope="col">Delivered</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        {% for i in items %}
+        <tr>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+            <th scope="row">{{i.oid}}</th>
+        
+        {% endfor %}
+
+
+    </tbody>
+</table>
+</div>
+</saction>
+{% endblock body %}

@@ -1,0 +1,53 @@
+{% extends 'navbar.html' %}
+{% block title  %}Contact Us{% endblock title  %}
+{% block body %}
+<center><h1 class = "text-center">Contact Us</h1>
+<div class='container mt-2'>
+    {% for message in messages %}
+    <div class ="alert alert={{message.tags}} alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></buton>
+    </div>
+    {% endfor %}
+    <div class ="card bg-secondary p-2">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"></div>
+
+        <form action = "/contact" method="POST">
+            {% csrf_token %}
+
+            <br>
+            <label for = "name">Full Name</label>
+            <div class="form-group">
+            <input type ="name" class ="form-conttrol p-2" id="name" name="name" required>
+            </div>
+            <label for = "email">E-mail</label>
+            <div class="form-group">
+            <input type ="email" class ="form-conttrol p-2" value="{{user.username}}" id="email" name="email" required>
+            </div>
+            <label for = "phone">Contact Details</label>
+            <div class="form-group">
+            <input type ="phone" class ="form-conttrol p-2" id="phone" name="phone" required>
+            </div>
+            <label for = "desc">Issue</label>
+            <div class="form-group">
+            <textarea type ="desc" class ="form-conttrol p-2" id="desc" name="desc" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+        </center>
+
+
+
+
+        <div class="col-md-">12</div>
+
+    </div>
+</div>
+</div>
+
+
+
+</div>
+{% endblock body %}
