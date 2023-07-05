@@ -19,6 +19,7 @@ class Product(models.Model):
     category = models.CharField(max_length=200,default="")
     subcategory = models.CharField(max_length=200,default="")
     price = models.IntegerField(unique=True,default=0)
+   #credit = models.DecimalField(max_digits=6, decimal_places=2)
     desc = models.CharField(max_length=5000)
     image = models.ImageField(upload_to='images/images',default="")
 

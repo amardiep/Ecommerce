@@ -123,17 +123,21 @@ def handlerequest(request):
 def profile(request):
     if not request.user.is_authenticated:
         messages.warning(request,"Login & Try Again")
-        return redirect('/auth/login/')
-    currentuser = request.user.username
+        return redirect('/auth/login')
+    currentuser=request.user.username
     items=Orders.objects.filter(email=currentuser)
     rid=""
     for i in items:
+        print(i.oid)
+        # print(i.order_id)
         myid=i.oid
-        rid = myid.replace("shopycart","")
+        rid=myid.replace("ShopyCart","")
         print(rid)
-    status = "Maycha Bhok" #OrderUpdate.objects.filter(order_id=int(rid))
-    print(status[::-1])
-    context = {"items":items,"status":status}
-    print(currentuser)
+    #status=OrderUpdate.objects.filter(order_id=int(rid))
+    #for j in status:
+       # print(j.update_desc)
 
-    return render(request,'profile.html',context)
+   
+    context ={"items":items,} #""status":status"
+    # print(currentuser)
+    return render(request,"profile.html",context)
